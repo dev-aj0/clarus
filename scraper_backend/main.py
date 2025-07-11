@@ -16,6 +16,10 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+@app.get("/healthz")
+def health_check():
+    return {"status": "ok"}
+
 class ScrapeRequest(BaseModel):
     url: HttpUrl
 
