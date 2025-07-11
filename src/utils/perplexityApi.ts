@@ -96,7 +96,7 @@ export const analyzeContent = async (content: string, type: 'url' | 'text' | 'pd
       if (!/^https?:\/\//.test(content)) {
         throw new Error('Invalid URL: must start with http:// or https://');
       }
-      const backendUrl = 'http://localhost:8000/scrape';
+      const backendUrl = 'https://clarus-ai-gewv.onrender.com/scrape';
       const reqBody = { url: content };
       const backendResp = await fetch(backendUrl, {
         method: 'POST',
