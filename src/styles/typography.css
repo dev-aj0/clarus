@@ -1,0 +1,100 @@
+
+
+@layer base {
+  body {
+    @apply bg-background text-foreground;
+    font-weight: 600; /* Semi-bold weight for body text (increased from 500) */
+    font-family: 'Be Vietnam Pro', 'Inter', 'ui-sans-serif', 'system-ui', 'sans-serif';
+    transition: font-size 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Default text elements - semi-bold weight */
+  p, span, div, label, input, textarea, select {
+    font-weight: 600; /* Increased from 500 */
+  }
+
+  /* Page headings (h1) - extra bold for hierarchy */
+  h1 {
+    font-weight: 800; /* Extra bold (increased from 700) */
+    font-size: 1.875rem; /* text-3xl */
+    line-height: 2.25rem;
+  }
+
+  /* Section headings - bold weight */
+  h2 {
+    font-weight: 700; /* Bold (increased from 600) */
+    font-size: 1.5rem; /* text-2xl */
+    line-height: 2rem;
+  }
+
+  h3 {
+    font-weight: 700; /* Bold (increased from 600) */
+    font-size: 1.25rem; /* text-xl */
+    line-height: 1.75rem;
+  }
+
+  h4, h5, h6 {
+    font-weight: 700; /* Bold (increased from 600) */
+    font-size: 1.125rem; /* text-lg */
+    line-height: 1.75rem;
+  }
+
+  /* Muted text (gray text) - semi-bold weight */
+  .text-muted-foreground {
+    font-weight: 600; /* Increased from 500 */
+  }
+
+  /* Buttons should be bold weight for strong readability */
+  button {
+    font-weight: 700; /* Increased from 600 */
+  }
+
+  /* Card titles should be bold weight */
+  .card h3 {
+    font-weight: 700; /* Increased from 600 */
+  }
+
+  /* Form labels should be bold weight for clarity */
+  label {
+    font-weight: 700; /* Increased from 600 */
+  }
+
+  /* Navigation text should be bold weight */
+  nav, nav * {
+    font-weight: 700; /* Increased from 600 */
+  }
+
+  /* Description text should be semi-bold weight */
+  .description, .subtitle, .subheading {
+    font-weight: 600; /* Increased from 500 */
+  }
+
+  /* Settings headings should be bold */
+  .settings-heading {
+    font-weight: 700; /* Increased from 600 */
+  }
+
+  /* Settings-specific styles - make input text and supporting text normal weight */
+  .settings input,
+  .settings input::placeholder,
+  .settings textarea,
+  .settings textarea::placeholder {
+    font-weight: 400 !important; /* Normal weight for inputs */
+  }
+
+  /* Settings supporting text should be normal weight */
+  .settings .text-muted-foreground {
+    font-weight: 400 !important;
+  }
+
+  /* Settings card descriptions should be normal weight by default */
+  .settings .card-description {
+    font-weight: 400 !important;
+  }
+
+  /* Settings card descriptions that should be bold (subheadings) */
+  .settings .settings-card-description-bold {
+    font-weight: 600 !important;
+  }
+}
+

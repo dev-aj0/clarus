@@ -1,0 +1,163 @@
+@layer base {
+  /* High Contrast Mode - improved visibility */
+  .high-contrast {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 0%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 0%;
+    --primary: 0 0% 0%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 0 0% 95%;
+    --secondary-foreground: 0 0% 0%;
+    --muted: 0 0% 90%;
+    --muted-foreground: 0 0% 20%;
+    --border: 0 0% 30%;
+    --input: 0 0% 100%;
+    --ring: 0 0% 0%;
+  }
+
+  .high-contrast.dark {
+    --background: 0 0% 0%;
+    --foreground: 0 0% 100%;
+    --card: 0 0% 0%;
+    --card-foreground: 0 0% 100%;
+    --primary: 0 0% 100%;
+    --primary-foreground: 0 0% 0%;
+    --secondary: 0 0% 5%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 0 0% 10%;
+    --muted-foreground: 0 0% 80%;
+    --border: 0 0% 70%;
+    --input: 0 0% 0%;
+    --ring: 0 0% 100%;
+  }
+
+  /* High contrast button improvements */
+  .high-contrast button,
+  .high-contrast.dark button {
+    border: 1px solid hsl(var(--border)) !important;
+    background: hsl(var(--background)) !important;
+    color: hsl(var(--foreground)) !important;
+  }
+
+  .high-contrast button[data-state="checked"],
+  .high-contrast.dark button[data-state="checked"] {
+    background: hsl(var(--foreground)) !important;
+    color: hsl(var(--background)) !important;
+  }
+
+  /* High contrast toggle switches */
+  .high-contrast [role="switch"],
+  .high-contrast.dark [role="switch"] {
+    border: 2px solid hsl(var(--border)) !important;
+    background: hsl(var(--background)) !important;
+  }
+
+  .high-contrast [role="switch"][data-state="checked"],
+  .high-contrast.dark [role="switch"][data-state="checked"] {
+    background: hsl(var(--foreground)) !important;
+    border-color: hsl(var(--foreground)) !important;
+  }
+
+  .high-contrast [role="switch"] > span,
+  .high-contrast.dark [role="switch"] > span {
+    background: hsl(var(--foreground)) !important;
+  }
+
+  .high-contrast [role="switch"][data-state="checked"] > span,
+  .high-contrast.dark [role="switch"][data-state="checked"] > span {
+    background: hsl(var(--background)) !important;
+  }
+
+  /* Protect profile pictures from high contrast */
+  .high-contrast .avatar img,
+  .high-contrast.dark .avatar img,
+  .high-contrast [data-radix-avatar-image],
+  .high-contrast.dark [data-radix-avatar-image] {
+    filter: none !important;
+    outline: none !important;
+  }
+
+  /* Ensure input borders are visible in high contrast mode with reduced thickness */
+  .high-contrast input,
+  .high-contrast textarea,
+  .high-contrast select {
+    border: 1px solid hsl(var(--border)) !important;
+    background: hsl(var(--background)) !important;
+  }
+
+  .high-contrast.dark input,
+  .high-contrast.dark textarea,
+  .high-contrast.dark select {
+    border: 1px solid hsl(var(--border)) !important;
+    background: hsl(var(--background)) !important;
+  }
+
+  /* Fix avatar fallback text visibility */
+  .high-contrast [data-radix-avatar-fallback],
+  .high-contrast.dark [data-radix-avatar-fallback] {
+    background: hsl(var(--primary)) !important;
+    color: hsl(var(--primary-foreground)) !important;
+  }
+
+  /* Fix send button icon visibility */
+  .high-contrast button svg,
+  .high-contrast.dark button svg {
+    color: inherit !important;
+  }
+
+  /* Remove darkened navigation bar outline in high contrast */
+  .high-contrast .topbar-consistent,
+  .high-contrast.dark .topbar-consistent {
+    border-bottom: 1px solid hsl(var(--muted)) !important;
+  }
+
+  /* Fix theme selection buttons */
+  .high-contrast button[variant="outline"],
+  .high-contrast.dark button[variant="outline"] {
+    border: 2px solid hsl(var(--border)) !important;
+  }
+
+  /* Fix dropdown menu items */
+  .high-contrast [role="menuitem"],
+  .high-contrast.dark [role="menuitem"] {
+    color: hsl(var(--foreground)) !important;
+  }
+
+  /* Fix chat input and send button */
+  .high-contrast textarea,
+  .high-contrast.dark textarea {
+    color: hsl(var(--foreground)) !important;
+    background: hsl(var(--background)) !important;
+  }
+
+  /* High contrast: clearer hover/focus/active for interactive elements */
+  .high-contrast button:hover,
+  .high-contrast button:focus-visible,
+  .high-contrast [role="menuitem"]:hover,
+  .high-contrast [role="menuitem"]:focus-visible,
+  .high-contrast [data-state="active"],
+  .high-contrast .tab-active,
+  .high-contrast .tab-active:focus-visible,
+  .high-contrast .tab-active:hover,
+  .high-contrast .accordion-trigger:focus-visible,
+  .high-contrast .accordion-trigger:hover {
+    outline: 2.5px solid hsl(var(--primary)) !important;
+    outline-offset: 2px !important;
+    background: hsl(var(--muted)) !important;
+    color: hsl(var(--primary)) !important;
+    border-color: hsl(var(--primary)) !important;
+    box-shadow: 0 0 0 2px hsl(var(--primary)) !important;
+    z-index: 2;
+  }
+
+  .high-contrast .accordion-item {
+    border: 2px solid hsl(var(--primary)) !important;
+    border-radius: 0.5rem !important;
+  }
+
+  .high-contrast .accordion-item[data-state="open"] {
+    border-color: hsl(var(--primary)) !important;
+    background: hsl(var(--muted)) !important;
+  }
+}

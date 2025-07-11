@@ -1,0 +1,44 @@
+@layer base {
+  /* Font Size Classes with smooth transitions */
+  .text-small,
+  .text-small * {
+    font-size: 14px !important;
+    transition: font-size 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .text-medium,
+  .text-medium * {
+    font-size: 16px !important;
+    transition: font-size 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .text-large,
+  .text-large * {
+    font-size: 18px !important;
+    transition: font-size 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .text-extra-large,
+  .text-extra-large * {
+    font-size: 20px !important;
+    transition: font-size 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Reduced Motion */
+  .reduce-motion * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  /* Hide scrollbars */
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
+  html {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}

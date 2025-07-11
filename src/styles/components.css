@@ -1,0 +1,91 @@
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  /* Ensure proper dark mode styling for all components */
+  .dark body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+  }
+
+  .dark .bg-white {
+    background-color: hsl(var(--card)) !important;
+  }
+
+  .dark .text-gray-900 {
+    color: hsl(var(--foreground)) !important;
+  }
+
+  .dark .text-gray-800 {
+    color: hsl(var(--foreground)) !important;
+  }
+
+  .dark .text-gray-700 {
+    color: hsl(var(--muted-foreground)) !important;
+  }
+
+  .dark .text-gray-600 {
+    color: hsl(var(--muted-foreground)) !important;
+  }
+
+  .dark .text-gray-500 {
+    color: hsl(var(--muted-foreground)) !important;
+  }
+
+  .dark .bg-gray-50 {
+    background-color: hsl(var(--muted)) !important;
+  }
+
+  .dark .bg-gray-100 {
+    background-color: hsl(var(--muted)) !important;
+  }
+
+  .dark .border-gray-200 {
+    border-color: hsl(var(--border)) !important;
+  }
+
+  .dark .border-gray-300 {
+    border-color: hsl(var(--border)) !important;
+  }
+
+  .dark .shadow-lg {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.2) !important;
+  }
+
+  /* Fix green button text color in dark mode */
+  .dark .bg-primary,
+  .dark .bg-primary:hover,
+  .dark button.bg-primary,
+  .dark button.bg-primary:hover {
+    color: white !important;
+  }
+
+  /* Consistent container sizing and TopBar height */
+  .container-consistent {
+    max-width: 6xl;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+
+  /* Ensure consistent TopBar height across all pages */
+  .topbar-consistent {
+    min-height: 4rem;
+    height: 4rem;
+  }
+
+  /* Clarus logo color in light mode */
+  .text-gray-900 {
+    color: #21533b !important;
+  }
+
+  /* Clarus brand text color */
+  .clarus-brand-text {
+    color: #31572c !important;
+  }
+
+  .dark .clarus-brand-text {
+    color: hsl(var(--foreground)) !important;
+  }
+}
