@@ -1,84 +1,85 @@
-# Clarus - AI-Powered Scientific Analysis
+# ✨ Clarus — AI-Powered Scientific Fact-Checking 🧠🔬
 
-Clarus is a web application that helps users analyze scientific content for accuracy using AI-powered fact-checking. It provides reliable scientific research to combat misinformation and bias.
+Welcome to **Clarus**! Your go-to app for analyzing and fact-checking scientific content with the power of AI. Get instant, research-backed insights on articles, posts, PDFs, and more — all in a beautiful, modern interface.
 
-## Features
+---
 
-- **Content Analysis**: Analyze scientific accuracy of posts, articles, and content
-- **AI Chat Assistant**: Get insights and answers about scientific content
-- **Analysis Library**: Save and organize your analysis history
-- **Multiple Input Types**: Support for URLs, text, PDFs, and YouTube videos
-- **Research Sources**: Access to peer-reviewed research papers and citations
-- **Dark Mode**: Full dark mode support with accessibility features
+## 🚀 Features
 
-## Technology Stack
+- 🌐 **Analyze Anything**: Fact-check URLs, text, and PDFs for scientific accuracy
+- 🤖 **AI Chat Assistant**: Ask questions and get smart, science-based answers
+- 📚 **Personal Library**: Save and revisit your analyses privately
+- 🕵️‍♂️ **Peer-Reviewed Sources**: See real research and direct quotes
+- 🌗 **Dark Mode**: Eye-friendly, accessible design
+- 🔒 **Private by Design**: Your data is yours — always
 
-- **Frontend**: React 18 with TypeScript
-- **Styling**: Tailwind CSS with shadcn/ui components
-- **Routing**: React Router v6
-- **State Management**: React Query for server state
-- **AI Integration**: Perplexity AI for content analysis
-- **Build Tool**: Vite
+---
 
-## Getting Started
+## 🛠️ Tech Stack
 
-### Prerequisites
+- ⚛️ React + TypeScript
+- 🎨 Tailwind CSS + shadcn/ui
+- ⚡ Vite (super fast dev/build)
+- 🔑 Supabase Auth (Google sign-in only)
+- 🤝 Perplexity AI (for analysis)
 
-- Node.js 18+ and npm
+---
 
-### Installation
+## 🏁 Getting Started
 
-1. Clone the repository:
+### 1️⃣ Clone & Install
 ```sh
 git clone <YOUR_GIT_URL>
-cd clarus
-```
-
-2. Install dependencies:
-```sh
+cd clarus-ai-main
 npm install
 ```
 
-3. Start the development server:
+### 2️⃣ Set Up Your `.env`  🗝️
+- Copy `.env.example` to `.env` (create one if missing)
+- Add your API keys (Perplexity, Supabase, etc.)
+- **Never share your `.env`!** (It’s gitignored for safety)
+
+### 3️⃣ Run the App
 ```sh
 npm run dev
 ```
+Visit [http://localhost:8080](http://localhost:8080) and start analyzing!
 
-4. Open your browser and navigate to `http://localhost:8080`
+---
 
-## Project Structure
+## 🔑 Authentication
+- **Google Sign-In only** (no email/password)
+- Each user’s data is private and separate
+
+---
+
+## 📁 Project Structure
 
 ```
 src/
-├── components/          # Reusable UI components
-├── pages/              # Page components
-├── hooks/              # Custom React hooks
-├── services/           # API and data services
-├── types/              # TypeScript type definitions
-├── utils/              # Utility functions
-├── styles/             # CSS and styling files
-└── contexts/           # React context providers
+  components/   # UI building blocks
+  pages/        # Main app pages
+  hooks/        # Custom React hooks
+  services/     # Data & API logic
+  types/        # TypeScript types
+  utils/        # Helpers & utilities
+  styles/       # CSS & themes
+  contexts/     # App-wide state
 ```
 
-## Available Scripts
+---
 
-- `npm run dev` - Start development server
-- `npm run build` - Build for production
-- `npm run preview` - Preview production build
-- `npm run lint` - Run ESLint
+## 🧑‍💻 Contributing
+1. Fork & branch off `main`
+2. Make your magic ✨
+3. PRs welcome!
 
-## Configuration
+---
 
-The application uses Perplexity AI for content analysis. Make sure to configure your API key in the application settings.
+## ⚠️ License & Security
+- **Private project** — not for commercial use
+- Keep your API keys secret! (`.env` is always gitignored)
 
-## Contributing
+---
 
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Run tests and linting
-5. Submit a pull request
-
-## License
-
-This project is private and proprietary.
+Made with ❤️ by the Clarus team
