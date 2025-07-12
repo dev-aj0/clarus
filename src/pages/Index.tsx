@@ -94,16 +94,16 @@ const Index = () => {
       <main className="flex-1 overflow-hidden min-h-screen h-full">
         <div className="container-consistent h-full min-h-screen flex flex-col">
           {/* Header */}
-          <div className="mb-6 flex-shrink-0">
+          <div className="mb-6 flex-shrink-0 mobile-header">
             <h1 className="text-3xl font-bold mb-2">Information Credibility Analysis</h1>
             <p className="text-muted-foreground font-medium">
               Fact-check information with reliable scientific research, presented in an accessible format to combat misinformation and bias.
             </p>
           </div>
 
-          <div className="flex-1 grid gap-8 overflow-hidden min-h-0 h-full" style={{ gridTemplateColumns: '550px 1fr' }}>
+          <div className="flex-1 grid gap-8 overflow-hidden min-h-0 h-full mobile-responsive-grid" style={{ gridTemplateColumns: 'minmax(0, 550px) 1fr' }}>
             {/* Left Column - Input (Fixed Width) */}
-            <div className="flex flex-col min-w-0 max-h-[650px] h-[650px]">
+            <div className="flex flex-col min-w-0 max-h-[650px] h-[650px] mobile-card">
               <QuickActions 
                 onActionSelect={handleQuickAction} 
                 onAnalyze={handleAnalyzeWithClear}
@@ -114,7 +114,7 @@ const Index = () => {
             </div>
 
             {/* Right Column - Results (Flexible Width) */}
-            <div className={`flex flex-col min-w-0 overflow-hidden ${!currentAnalysis && !isLoading ? 'h-[650px] max-h-[650px]' : ''}`}>
+            <div className={`flex flex-col min-w-0 overflow-hidden mobile-card ${!currentAnalysis && !isLoading ? 'h-[650px] max-h-[650px]' : ''}`}>
               <AnalysisResultsArea
                 isLoading={isLoading}
                 currentAnalysis={currentAnalysis}

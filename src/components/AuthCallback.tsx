@@ -8,11 +8,16 @@ const AuthCallback = () => {
   useEffect(() => {
     const handleAuthCallback = async () => {
       try {
+        console.log('Auth callback: Starting authentication process...')
+        
         // Handle the auth callback from the URL
         const { data, error } = await supabase.auth.getSession()
         
         // Also try to get session from URL hash/query params
         const { data: sessionData, error: sessionError } = await supabase.auth.getUser()
+        
+        console.log('Auth callback: Session data:', data)
+        console.log('Auth callback: User data:', sessionData)
         
         if (error || sessionError) {
           console.error('Auth callback error:', error || sessionError)
