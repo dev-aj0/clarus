@@ -27,20 +27,32 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   useEffect(() => {
     // Check for existing session on mount
     const getSession = async () => {
-      const { data, error } = await supabase.auth.getSession()
-      if (data?.session) {
-        setUser(data.session.user)
-        setSession(data.session)
-      } else {
+      try {
+        const { data, error } = await supabase.auth.getSession()
+        if (error) {
+          console.error('Session error:', error)
+          setUser(null)
+          setSession(null)
+        } else if (data?.session) {
+          setUser(data.session.user)
+          setSession(data.session)
+        } else {
+          setUser(null)
+          setSession(null)
+        }
+      } catch (error) {
+        console.error('Session check failed:', error)
         setUser(null)
         setSession(null)
+      } finally {
+        setLoading(false)
       }
-      setLoading(false)
     }
     getSession()
 
     // Listen for auth state changes
-    const { data: listener } = supabase.auth.onAuthStateChange((_event, session) => {
+    const { data: listener } = supabase.auth.onAuthStateChange((event, session) => {
+      console.log('Auth state change:', event, session?.user?.email)
       setUser(session?.user ?? null)
       setSession(session ?? null)
     })
@@ -50,10 +62,16 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   }, [])
 
   const signOut = async () => {
-    await supabase.auth.signOut()
-    setUser(null)
-    setSession(null)
-    window.location.href = '/auth'
+    try {
+      await supabase.auth.signOut()
+      setUser(null)
+      setSession(null)
+    } catch (error) {
+      console.error('Sign out error:', error)
+      // Force clear state even if sign out fails
+      setUser(null)
+      setSession(null)
+    }
   }
 
   return (

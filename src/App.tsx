@@ -29,8 +29,13 @@ const AppContent = () => {
     );
   }
 
+  // Ensure user state is consistent
   if (!user) {
-    return <SignIn />;
+    return (
+      <div className="min-h-screen bg-background">
+        <SignIn />
+      </div>
+    );
   }
 
   return (
