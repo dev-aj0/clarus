@@ -16,28 +16,9 @@ const SignIn = () => {
   const handleGoogleSignIn = async () => {
     setLoading(true)
     setError('')
-    
-    try {
-      console.log('Starting Google OAuth sign in...')
-      const { error } = await supabase.auth.signInWithOAuth({ 
-        provider: 'google',
-        options: {
-          redirectTo: `${window.location.origin}/auth/callback`
-        }
-      })
-      
-      if (error) {
-        console.error('Google sign in error:', error)
-        setError(error.message)
-      } else {
-        console.log('Google sign in initiated successfully')
-      }
-    } catch (err) {
-      console.error('Unexpected error during sign in:', err)
-      setError('An unexpected error occurred. Please try again.')
-    } finally {
-      setLoading(false)
-    }
+    const { error } = await supabase.auth.signInWithOAuth({ provider: 'google' })
+    if (error) setError(error.message)
+    setLoading(false)
   }
 
   return (
